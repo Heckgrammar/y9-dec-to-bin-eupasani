@@ -14,21 +14,32 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int myInt = 0; //just for testing single stepping
             string myString = "12"; //watch me being cast from string to int
             int myStringAsInt = Convert.ToInt32(myString); //watch me cast from string to int
-
+           
+            string greeting = "world!";
+            greeting = greeting.Insert(0, "Hello ");
+            Console.WriteLine(greeting);
             //MAIN:  NUMBER CONVERSION PROGRAM
-
+            Console.WriteLine( numberConversion(210, 2);
             //CODE GOES HERE
         }
 
         ////static void means the function will not return a value so it does not need a data type 
         ////...this function DOES return a value so the method must have a data type
-        //static string numberConversion(int number, int numberbase)
-        //{
-        //    //CODE GOES HERE
-        
-        //  return result; //REMOVE THE RED LINE!
-        //}
-    }
+        static string numberConversion(int number, int numberbase)
+        {
+            //    //CODE GOES HERE
+            int tempBinDigit = 0;
+            string result = "";
+            while (tempBinDigit != 0)
+            {
+                tempBinDigit = number % numberbase;
+                
+                result = result.Insert(0, Convert.ToString(tempBinDigit));
+            }
+
+            return result; //REMOVE THE RED LINE!
+        }
+}
 }
 
 
