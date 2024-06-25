@@ -19,7 +19,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
             greeting = greeting.Insert(0, "Hello ");
             Console.WriteLine(greeting);
             //MAIN:  NUMBER CONVERSION PROGRAM
-            Console.WriteLine( numberConversion(210, 2);
+            Console.WriteLine( numberConversion(210, 2));
             //CODE GOES HERE
         }
 
@@ -28,13 +28,13 @@ namespace Y9_DEC_TO_BIN_SKELETON
         static string numberConversion(int number, int numberbase)
         {
             //    //CODE GOES HERE
-            int tempBinDigit = 0;
+            int remainder = -1;
             string result = "";
-            while (tempBinDigit != 0)
+            while (number != 0)
             {
-                tempBinDigit = number % numberbase;
-                
-                result = result.Insert(0, Convert.ToString(tempBinDigit));
+                remainder = number % numberbase;
+                number = number / 2;
+                result = result.Insert(0, Convert.ToString(remainder));
             }
 
             return result; //REMOVE THE RED LINE!
