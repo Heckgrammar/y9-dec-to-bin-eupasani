@@ -25,7 +25,8 @@ namespace Y9_DEC_TO_BIN_SKELETON
             while (enteredNum <= 0 ) 
                 {
                 Console.WriteLine("Enter a positive number");
-                }
+                enteredNum = Convert.ToInt32(Console.ReadLine());
+            }
             Console.WriteLine( numberConversion(enteredNum,2));
             //CODE GOES HERE
         }
