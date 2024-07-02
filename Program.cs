@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,8 +20,13 @@ namespace Y9_DEC_TO_BIN_SKELETON
             greeting = greeting.Insert(0, "Hello ");
             Console.WriteLine(greeting);
             //MAIN:  NUMBER CONVERSION PROGRAM
-            Console.WriteLine("Enter number and numberbase consecutively, pressing enter in between.");
-            Console.WriteLine( numberConversion(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine())));
+            Console.WriteLine("Enter a positive number and numberbase consecutively, pressing enter in between.");
+            int enteredNum = Convert.ToInt32(Console.ReadLine());
+            while (enteredNum <= 0 ) 
+                {
+                Console.WriteLine("Enter a positive number");
+                }
+            Console.WriteLine( numberConversion(enteredNum,2));
             //CODE GOES HERE
         }
 
