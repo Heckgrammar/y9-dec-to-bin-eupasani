@@ -19,7 +19,8 @@ namespace Y9_DEC_TO_BIN_SKELETON
             greeting = greeting.Insert(0, "Hello ");
             Console.WriteLine(greeting);
             //MAIN:  NUMBER CONVERSION PROGRAM
-            Console.WriteLine( numberConversion(210, 2));
+            Console.WriteLine("Enter number and numberbase consecutively, pressing enter in between.");
+            Console.WriteLine( numberConversion(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine())));
             //CODE GOES HERE
         }
 
