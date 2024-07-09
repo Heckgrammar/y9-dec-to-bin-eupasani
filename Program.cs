@@ -15,6 +15,8 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int enteredNum = 0;
             bool valid = false;
             bool integer = false;
+            Console.WriteLine("Choose from these: 1 for dec to bin; 2 for bin to dec");
+            int conversion = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter a positive number not beginning with zero");
             string input = Console.ReadLine();
             
@@ -52,17 +54,24 @@ namespace Y9_DEC_TO_BIN_SKELETON
                     enteredNum = Convert.ToInt32(input);
                 }
                 else { valid = true; }
-                Console.WriteLine("Enter the base");
-                int numBase = Convert.ToInt32(Console.ReadLine());
-                if (numBase != 16)
-                    Console.WriteLine(numberConversion(enteredNum, numBase));
-                else { }
+
+
+                if (conversion == 1)
+                { 
+                    Console.WriteLine("Enter the base");
+                    int numBase = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(decToBin(enteredNum, numBase)    );
+                }
+                else if (conversion == 2)
+                {
+                    Console.WriteLine(bintodec(enteredNum));
+                }
             }
 
 
 
         }
-            static string numberConversion(int number, int numberbase)
+            static string decToBin(int number, int numberbase)
         {
             //    //CODE GOES HERE 
             int remainder = 0;
@@ -75,8 +84,22 @@ namespace Y9_DEC_TO_BIN_SKELETON
             }
             return result; //REMOVE THE RED LINE! 
         }
-        
-      
+
+        static string bintodec(int number)
+        {
+            int totalNum = 0;
+            for (int i = 0; i < Convert.ToInt32(Convert.ToString(number).Length); i++)
+            {
+                string currentDigit = Convert.ToString(number).Substring(i, 1);
+                int toDec = Convert.ToInt32( Math.Pow(Convert.ToDouble(i), 2))  * Convert.ToInt32(currentDigit) ;
+               
+                 totalNum = totalNum + Convert.ToInt32(toDec);
+            }
+
+            string result = Convert.ToString(totalNum);
+            return  result;
+        }
+
     }
 }
 
