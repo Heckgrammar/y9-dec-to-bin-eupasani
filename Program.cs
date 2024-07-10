@@ -15,8 +15,13 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int enteredNum = 0;
             bool valid = false;
             bool integer = false;
-            Console.WriteLine("Choose from these: 1 for dec to bin; 2 for bin to dec");
-            int conversion = Convert.ToInt32(Console.ReadLine());
+            int conversion = 0;
+            while (conversion != 1 && conversion != 2)
+            {
+                Console.WriteLine("Choose from these: 1 for dec to bin; 2 for bin to dec");
+                 conversion = Convert.ToInt32(Console.ReadLine());
+            }
+            
             Console.WriteLine("Enter a positive number not beginning with zero");
             string input = Console.ReadLine();
             
@@ -55,17 +60,15 @@ namespace Y9_DEC_TO_BIN_SKELETON
                 }
                 else { valid = true; }
 
-
-                if (conversion == 1)
-                { 
-                    Console.WriteLine("Enter the base");
-                    int numBase = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(decToBin(enteredNum, numBase)    );
-                }
-                else if (conversion == 2)
-                {
-                    Console.WriteLine(bintodec(enteredNum));
-                }
+                    if (conversion == 1)
+                    {
+                        Console.WriteLine(decToBin(enteredNum, 2));
+                    }
+                    else if (conversion == 2)
+                    {
+                        Console.WriteLine(bintodec(enteredNum));
+                    }
+                
             }
 
 
@@ -90,7 +93,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int totalNum = 0;
             for (int i = 0; i < Convert.ToInt32(Convert.ToString(number).Length); i++)
             {
-                string currentDigit = Convert.ToString(number).Substring(i, 1);
+                string currentDigit = Convert.ToString(number).Substring(Convert.ToString(number).Length -1 - i, 1);
                 int toDec = Convert.ToInt32( Math.Pow(Convert.ToDouble(2), i))  * Convert.ToInt32(currentDigit) ;
                
                  totalNum = totalNum + toDec;
