@@ -91,9 +91,9 @@ namespace Y9_DEC_TO_BIN_SKELETON
             for (int i = 0; i < Convert.ToInt32(Convert.ToString(number).Length); i++)
             {
                 string currentDigit = Convert.ToString(number).Substring(i, 1);
-                int toDec = Convert.ToInt32( Math.Pow(Convert.ToDouble(i), 2))  * Convert.ToInt32(currentDigit) ;
+                int toDec = Convert.ToInt32( Math.Pow(Convert.ToDouble(2), i))  * Convert.ToInt32(currentDigit) ;
                
-                 totalNum = totalNum + Convert.ToInt32(toDec);
+                 totalNum = totalNum + toDec;
             }
 
             string result = Convert.ToString(totalNum);
